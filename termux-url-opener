@@ -14,7 +14,7 @@ case $CHOICE in
 yt-dlp -F $url
 read -p "choose video ID : " VIDEO
 read -p "choose audio ID : " AUDIO
-yt-dlp -f $VIDEO+$AUDIO -o "/storage/emulated/0/1dml/%(title)s.%(ext)s" $url
+yt-dlp -f $VIDEO+$AUDIO -o "/storage/emulated/0/Download/%(title)s.%(ext)s" $url
 	;;
 2)
 yt-dlp -f 'ba' --embed-metadata --embed-thumbnail -v --convert-thumbnail png --ppa "EmbedThumbnail+ffmpeg_o:-c:v png -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" --extract-audio --audio-quality 320k --audio-format mp3 --output "/storage/emulated/0/Music/%(title)s.%(ext)s" $url
@@ -22,6 +22,6 @@ yt-dlp -f 'ba' --embed-metadata --embed-thumbnail -v --convert-thumbnail png --p
 3 )
 yt-dlp --list-subs $url
 read -p "choose subtitle : " SUB
-yt-dlp --write-subs --sub-lang $SUB -o "/storage/emulated/0/1dml/%(title)s.%(ext)s" $url
+yt-dlp --write-subs --sub-lang $SUB -o "/storage/emulated/0/Download/%(title)s.%(ext)s" $url
 	;;
 esac
